@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "destinations",
+  "info": {
+    "singularName": "destination",
+    "pluralName": "destinations",
+    "displayName": "Destination"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "tour": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tour.tour",
+      "inversedBy": "destinations"
+    }
+  }
+}
